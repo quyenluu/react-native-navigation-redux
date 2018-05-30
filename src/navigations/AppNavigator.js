@@ -7,11 +7,11 @@ import { AppStack } from '../components/App/AppStack';
 
 export const AppNavigator = createStackNavigator(
     {
-        AuthLoading: AuthLoadingScreen,
+        //AuthLoading: AuthLoadingScreen,
         App: AppStack,
         Auth: AuthStack,
     },
     {
-        initialRouteName: 'AuthLoading',
+        initialRouteName: 'Auth'
     }
 )
