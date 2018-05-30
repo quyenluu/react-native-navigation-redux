@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-export default class LoginScreen extends Component {
+export default class OtherScreen extends Component {
     render() {
         return (
-            <View style={{ backgroundColor: red }}>
-                <Text>Login Screen</Text>
+            <View style={{ backgroundColor: blue }}>
+                <Text>Home Screen</Text>
             </View>
         );
     }
