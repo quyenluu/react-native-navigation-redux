@@ -7,7 +7,7 @@ import { AppNavigator } from './src/navigations/AppNavigator';
 export default class App extends Component {
   render() {
     return (
-      <AppNavigator/>
+      <AppNavigator />
     );
   }
 }

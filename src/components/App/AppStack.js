@@ -8,9 +8,10 @@ import OtherScreen from './Other/OtherScreen';
 export const AppStack = createStackNavigator (
     {
         Home: HomeScreen,
-        Other: OtherScreen
+        Other: OtherScreen,
     },
     {
         initialRouteName: 'Home',
+        headerMode: 'screen'
     }
 );
