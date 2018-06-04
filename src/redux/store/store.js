@@ -3,4 +3,4 @@ import thunk from 'redux-thunk';
 
 import indexReducer from '../reducers/indexReducer';
 
-export default createStore(indexReducer, applyMiddleware(thunk));
+export const store = createStore(indexReducer, applyMiddleware(thunk));

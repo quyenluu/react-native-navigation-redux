@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux';
 
-//import  from './AuthReducer/*';
+import Login from './AuthReducer/LoginReducer';
+import Logout from './AuthReducer/LogoutRedcuer';
 
 const indexReducer = combineReducers({
-    login: Auth.Login
+    login: Login,
+    logout: Logout
 });
 
 export default indexReducer;
