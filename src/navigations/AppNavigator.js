@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 
 import { connect } from 'react-redux';
-import { initializeListeners } from 'react-navigation-redux-helpers';
-import { createBottomTabNavigator } from 'react-navigation';
+import { createBottomTabNavigator, addNavigationHelpers } from 'react-navigation';
 import PropTypes from 'prop-types';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -38,19 +37,20 @@ export const AppNavigator = createBottomTabNavigator(
     }
 )
 
-class AppWithNavigationState  extends React.Component {
-    static propTypes = {
-        dispatch: PropTypes.func.isRequired,
-        nav: PropTypes.object.isRequired,
-    };
-
-    componentDidMount() {
-        initializeListeners('root', this.props.nav);
+class AppWithNavigationState extends React.Component {
+    constructor(props){
+        super(props);
     }
-
     render() {
-        const { dispatch, nav } = this.props;
-        const navigation = navigationPropConstructor(dispatch, nav);
-        return <AppNavigator navigation={navigation} />;
+        return <AppNavigator navigation={addNavigationHelpers({
+            state: this.props.nav,
+            dispatch: this.props.dispatch
+        })} />;
     }
 }
+
+const mapStateToProps = state => ({
+    nav: state.nav,
+})
+
+export default connect(mapStateToProps)(AppWithNavigationState);
